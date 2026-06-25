@@ -44,13 +44,13 @@
       <h2>At a glance</h2>
       <p><span class="lead-label">How.</span> DALEAS is a French 3-year project funded by the
         French National Research Agency (<a href="https://anr.fr/en/">ANR</a>), started in January 2026.</p>
-      <p><span class="lead-label">What.</span> The DALEAS project aims to develop a proof of concept
-        for a multimodal tool capable of processing large-scale streaming multimedia data across various
-        domains such as disinformation, cartography, cybersecurity, and space exploration. Inspired by the
-        astronomical alert system Fink, the architecture will enable diverse users (journalists, scientists,
-        and other professionals) to analyze data by comparing it with verified reference sources. Built on
-        Apache Spark, the system will be scalable by design. Its core function is anomaly detection, such as
-        identifying fake news or inconsistencies in digital twins.</p>
+      <p><span class="lead-label">What.</span> The DALEAS project develops a proof of concept for a
+        multimodal tool that detects <strong>anomalies</strong> in large-scale streaming data — anything that
+        does not match a trusted <strong>geospatial reference</strong>, from a fake-news post to an
+        out-of-date digital twin. Its core is <em>honest geospatial indexing</em>: every source is anchored
+        in space and kept with the uncertainty it really carries — never collapsed to a single point — so it
+        can be confronted, at scale, with certified references such as IGN's LiDAR HD. Inspired by the
+        astronomical alert system Fink and built on Apache Spark, the system is scalable by design.</p>
       <p><span class="lead-label">Who.</span> DALEAS brings together partners specialized in Computer Science
         and Artificial Intelligence (LASTIG, CNRS), as well as Media (France Télévisions) and a security &
         cyber-defence partner.</p>
@@ -58,15 +58,13 @@
 
     <section id="objectives">
       <h2>Objectives</h2>
-      <p>DALEAS designs a scalable, reusable infrastructure to analyse massive streams of multimedia data
-        (images, video, text, 3D point clouds) by confronting them with trusted reference corpora, in order
-        to surface <em>anomalies</em> — what does not match the reference. The architecture is inspired by
-        <strong>Fink</strong>, an alert system originally built for astronomy, and is implemented on
-        <strong>Apache Spark</strong> so it scales by design across a cluster or the cloud.</p>
-      <p>The proof of concept is designed, evaluated and exploited through three use cases:</p>
+      <p>DALEAS aims to prove that a single, <strong>generic infrastructure</strong> can serve very different
+        fields from one shared core, letting each user focus on their own question while the infrastructure
+        handles the computing. Its genericity is validated by applying the same building blocks to three
+        deliberately different use cases:</p>
       <ul class="clean">
-        <li><strong>Combating disinformation</strong> — detecting fake or manipulated content against
-          verified, certified references.</li>
+        <li><strong>Combating disinformation</strong> — checking whether a video really shows the place it
+          claims, by confronting it with certified geospatial references (e.g. IGN's LiDAR HD).</li>
         <li><strong>Updating spatial datasets</strong> — flagging inconsistencies in digital twins of the
           territory that signal an out-of-date map.</li>
         <li><strong>Detecting artificial satellites</strong> — spotting anomalies in large astronomical
