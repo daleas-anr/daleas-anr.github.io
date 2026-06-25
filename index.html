@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DALEAS — Large-Scale Automatic Detection of Spatial Anomalies</title>
+  <meta name="description" content="DALEAS — an ANR-funded project building a scalable, multimodal proof of concept for large-scale anomaly detection across disinformation, cartography and space.">
+  <meta name="theme-color" content="#11131a">
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="theme.js"></script>
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="DALEAS — Large-Scale Automatic Detection of Spatial Anomalies">
+  <meta property="og:description" content="An ANR-funded project: a scalable multimodal tool for anomaly detection in large streaming data.">
+</head>
+<body>
+  <button id="theme-toggle" class="theme-toggle" aria-label="toggle theme">dark/light</button>
+
+  <main>
+    <header class="head">
+      <img class="logo" src="assets/logo-daleas.png" alt="DALEAS logo" width="86" height="86">
+      <div class="head-id">
+        <h1><span class="daleas-letter">D</span>ALEAS</h1>
+        <p class="subtitle">Détection Automatique à Large Échelle d'Anomalies Spatiales —
+          <em>Large-Scale Automatic Detection of Spatial Anomalies</em></p>
+        <p class="tagline">A scalable, multimodal tool to spot anomalies in large streaming data —
+          from disinformation to digital twins and the sky.</p>
+        <p class="meta">Funded by the <a href="https://anr.fr/en/">ANR</a> — <a href="https://anr.fr/fileadmin/aap/2025/selection/aap-astrid-2025-selection.pdf">ASTRID 2025</a> call · 3-year project · started January 2026</p>
+      </div>
+    </header>
+
+    <section id="news">
+      <h2>News</h2>
+      <div class="news-item">
+        <div class="news-date">2025-07-22</div>
+        <div class="news-title">Project accepted!</div>
+        <p>The DALEAS-ANR project has been officially accepted by the French National Research Agency (ANR).
+          The 3-year project will start in January 2026.</p>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>At a glance</h2>
+      <p><span class="lead-label">How.</span> DALEAS is a French 3-year project funded by the
+        French National Research Agency (<a href="https://anr.fr/en/">ANR</a>), started in January 2026.</p>
+      <p><span class="lead-label">What.</span> The DALEAS project aims to develop a proof of concept
+        for a multimodal tool capable of processing large-scale streaming multimedia data across various
+        domains such as disinformation, cartography, cybersecurity, and space exploration. Inspired by the
+        astronomical alert system Fink, the architecture will enable diverse users (journalists, scientists,
+        and other professionals) to analyze data by comparing it with verified reference sources. Built on
+        Apache Spark, the system will be scalable by design. Its core function is anomaly detection, such as
+        identifying fake news or inconsistencies in digital twins.</p>
+      <p><span class="lead-label">Who.</span> DALEAS brings together partners specialized in Computer Science
+        and Artificial Intelligence (LASTIG, CNRS), as well as Media (France Télévisions) and a security &
+        cyber-defence partner.</p>
+    </section>
+
+    <section id="objectives">
+      <h2>Objectives</h2>
+      <p>DALEAS designs a scalable, reusable infrastructure to analyse massive streams of multimedia data
+        (images, video, text, 3D point clouds) by confronting them with trusted reference corpora, in order
+        to surface <em>anomalies</em> — what does not match the reference. The architecture is inspired by
+        <strong>Fink</strong>, an alert system originally built for astronomy, and is implemented on
+        <strong>Apache Spark</strong> so it scales by design across a cluster or the cloud.</p>
+      <p>The proof of concept is designed, evaluated and exploited through three use cases:</p>
+      <ul class="clean">
+        <li><strong>Combating disinformation</strong> — detecting fake or manipulated content against
+          verified, certified references.</li>
+        <li><strong>Updating spatial datasets</strong> — flagging inconsistencies in digital twins of the
+          territory that signal an out-of-date map.</li>
+        <li><strong>Detecting artificial satellites</strong> — spotting anomalies in large astronomical
+          data streams.</li>
+      </ul>
+      <p>DALEAS is committed to open, documented components following the <strong>FAIR4RS</strong> principles
+        — transparency, adaptability, reproducibility and long-term usability of the research software.</p>
+    </section>
+
+    <section id="consortium">
+      <h2>Consortium</h2>
+      <div class="partners">
+        <div class="partner">
+          <img class="partner-logo" src="assets/logo-lastig.png" alt="LASTIG logo">
+          <div class="partner-body">
+            <p class="partner-name"><a href="https://www.umr-lastig.fr/">LASTIG</a></p>
+            <div class="partner-role">PROJECT COORDINATOR · <a href="https://www.ign.fr/">IGN</a>-<a href="https://www.ensg.eu/">ENSG</a>, <a href="https://www.univ-gustave-eiffel.fr/">Univ. Gustave Eiffel</a></div>
+            <ul>
+              <li>Data provider (photographs, LiDAR HD)</li>
+              <li>Multimodal indexing &amp; retrieval for data linking</li>
+              <li>Content-based spatialization &amp; reasoning for verification</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="partner">
+          <img class="partner-logo" src="assets/logo-ijclab.png" alt="IJCLab logo">
+          <div class="partner-body">
+            <p class="partner-name"><a href="https://www.ijclab.in2p3.fr/en/">IJCLab</a></p>
+            <div class="partner-role"><a href="https://www.cnrs.fr/en">CNRS</a> · large-scale data processing</div>
+            <ul>
+              <li>Big-data infrastructure &amp; scalability</li>
+              <li>Streaming alert architecture (Fink heritage)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="partner">
+          <img class="partner-logo" src="assets/logo-ftv.png" alt="France Télévisions logo">
+          <div class="partner-body">
+            <p class="partner-name"><a href="https://www.france.tv/">France Télévisions</a></p>
+            <div class="partner-role">MEDIA · storytelling &amp; fact-checking</div>
+            <ul>
+              <li>Disinformation use case &amp; visual investigation</li>
+              <li>Storytelling for understanding and engagement</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="partner generic">
+          <div class="placeholder" aria-hidden="true">⛨</div>
+          <div class="partner-body">
+            <p class="partner-name">Security &amp; cyber-defence</p>
+            <div class="partner-role">CYBERSECURITY · disinformation &amp; AI</div>
+            <ul>
+              <li>Security use case &amp; operational requirements</li>
+              <li>AI for the detection of manipulated information</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <details class="volet" id="jobs">
+      <summary>jobs</summary>
+      <div class="volet-body">
+        <p>We regularly offer job opportunities (internships, PhD, post-doc, engineer, etc.).
+          Open positions will be listed here as they become available.</p>
+        <p><strong>Past offers (closed)</strong></p>
+        <ul class="clean">
+          <li><strong>PhD</strong> — <a href="docs/annonce_these_loc2D3D-EN.pdf">Indexing and retrieval of
+            visual contents in 3D point clouds at large scale</a> — LASTIG — <em>Filled</em></li>
+          <li><strong>Master M2 internship</strong> — <a href="docs/sujet_stage_2025-Loc3D-ext-EN.pdf">Large-scale
+            place recognition in 3D point clouds</a> — LASTIG — <em>Filled</em></li>
+          <li><strong>Master M2 internship</strong> — <a href="docs/LIRIS-ILDA-AR_HyperStorylines.pdf">Storytelling
+            pour le Patrimoine Culturel</a> — LIRIS — <em>Filled</em></li>
+          <li><strong>PhD</strong> — <a href="docs/AGAPE_PhD_call.pdf">Reproducible and immersive 3D
+            Storytelling for Cultural Heritage</a> — ILDA — <em>Filled</em></li>
+        </ul>
+      </div>
+    </details>
+
+    <section id="publications">
+      <h2>Publications</h2>
+      <p class="tagline">Coming soon.</p>
+    </section>
+
+    <footer>
+      <p>If you have any questions, drop us a <a href="mailto:laurent.caraffa@ign.fr">mail</a>.</p>
+      <div class="fund">
+        <img src="assets/logo-anr.png" alt="ANR logo">
+        <span>Funded by the French National Research Agency
+          (<a href="https://anr.fr/en/">ANR</a>) under the
+          <a href="https://anr.fr/fileadmin/aap/2025/selection/aap-astrid-2025-selection.pdf">ASTRID 2025</a> call.</span>
+      </div>
+      <p style="margin-top:1rem">DALEAS · <span id="year"></span></p>
+    </footer>
+  </main>
+
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

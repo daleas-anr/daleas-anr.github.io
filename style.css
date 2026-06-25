@@ -1,0 +1,140 @@
+/* style.css — DALEAS project page.
+   Standalone, monospace minimalist look (shared with lcaraffa's site), DALEAS
+   violet accent. Self-contained: own CSS variables + theme.js, no dependency. */
+
+:root {
+  --bg: #fdfdfb; --fg: #1a1a1a; --muted: #6a6a6a;
+  --accent: #6D28D9; --accent-hover: #5b21b6; --line: #e2e2dd; --code-bg: #f4f4f0;
+  --mono: ui-monospace, "SF Mono", "JetBrains Mono", "IBM Plex Mono",
+          Menlo, Consolas, monospace;
+}
+:root[data-theme="dark"] {
+  --bg: #11131a; --fg: #d6d6d0; --muted: #7e8696;
+  --accent: #a78bfa; --accent-hover: #c4b5fd; --line: #232631; --code-bg: #171a22;
+}
+@media (prefers-color-scheme: dark) {
+  :root[data-theme="auto"] {
+    --bg: #11131a; --fg: #d6d6d0; --muted: #7e8696;
+    --accent: #a78bfa; --accent-hover: #c4b5fd; --line: #232631; --code-bg: #171a22;
+  }
+}
+
+* { box-sizing: border-box; }
+html, body { background: var(--bg); }
+body {
+  margin: 0; color: var(--fg);
+  font-family: var(--mono); font-size: 15px; line-height: 1.65;
+}
+main { max-width: 52rem; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+
+a {
+  color: var(--fg); text-decoration: underline;
+  text-decoration-color: var(--line); text-underline-offset: 2px;
+}
+a:hover { color: var(--accent); text-decoration-color: var(--accent); }
+em { font-style: italic; }
+strong { font-weight: 600; }
+
+/* theme toggle (fixed) */
+.theme-toggle {
+  position: fixed; top: .8rem; right: .8rem; z-index: 50;
+  font: 600 12px var(--mono); color: var(--muted);
+  background: var(--bg); border: 1px solid var(--line);
+  border-radius: 5px; padding: .2rem .55rem; cursor: pointer;
+}
+.theme-toggle:hover { color: var(--accent); border-color: var(--accent); }
+
+/* ---- header ------------------------------------------------------------- */
+.head { display: flex; align-items: flex-start; gap: 1.1rem; }
+.logo {
+  flex: 0 0 auto; width: 86px; height: 86px; object-fit: contain;
+  background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 6px;
+}
+.head-id { flex: 1 1 auto; min-width: 0; }
+h1 { font-size: 1.7rem; font-weight: 600; margin: 0; letter-spacing: .02em; }
+.daleas-letter { color: var(--accent); }
+.subtitle { color: var(--fg); margin: .45rem 0 0; font-size: .95rem; }
+.tagline { color: var(--muted); margin: .55rem 0 0; }
+.meta { color: var(--muted); font-size: .82rem; margin: .55rem 0 0; }
+.meta a { color: var(--accent); text-decoration: none; }
+.meta a:hover { text-decoration: underline; }
+
+/* ---- sections ----------------------------------------------------------- */
+section { margin-top: 2.5rem; }
+h2 {
+  font-size: 1.05rem; font-weight: 600; margin: 0 0 1rem;
+  padding-bottom: .4rem; border-bottom: 1px solid var(--line);
+}
+h2::before { content: "# "; color: var(--accent); }
+p { margin: 0 0 1rem; }
+section p:last-child { margin-bottom: 0; }
+.lead-label { color: var(--accent); font-weight: 600; }
+ul.clean { margin: 0; padding-left: 1.2rem; }
+ul.clean li { margin: .2rem 0; }
+
+/* ---- consortium --------------------------------------------------------- */
+.partners { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.1rem; }
+.partner {
+  display: flex; gap: .9rem; align-items: flex-start;
+  border: 1px solid var(--line); border-radius: 12px; padding: 1rem 1.1rem;
+}
+.partner-logo {
+  flex: 0 0 auto; width: 64px; height: 64px; object-fit: contain;
+  background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 5px;
+}
+.partner-body { flex: 1 1 auto; min-width: 0; }
+.partner-name { font-weight: 600; margin: 0; }
+.partner-name a { color: var(--fg); text-decoration: none; }
+.partner-name a:hover { color: var(--accent); }
+.partner-role { color: var(--accent); font-size: .78rem; font-weight: 600; }
+.partner-role a { color: inherit; text-decoration: underline; text-decoration-color: var(--line); }
+.partner-role a:hover { text-decoration-color: currentColor; }
+.partner ul { margin: .4rem 0 0; padding-left: 1.1rem; color: var(--muted); font-size: .88rem; }
+.partner ul li { margin: .12rem 0; }
+.partner.generic { align-items: center; }
+.partner.generic .placeholder {
+  flex: 0 0 auto; width: 64px; height: 64px; display: flex; align-items: center;
+  justify-content: center; font-size: 1.6rem; color: var(--muted);
+  background: var(--code-bg); border: 1px dashed var(--line); border-radius: 8px;
+}
+
+/* ---- collapsible "volets" (native details) ------------------------------ */
+details.volet { margin-top: 2.5rem; }
+details.volet > summary {
+  list-style: none; cursor: pointer; font-size: 1.05rem; font-weight: 600;
+  padding-bottom: .4rem; border-bottom: 1px solid var(--line);
+  display: flex; align-items: center; gap: .4rem;
+}
+details.volet > summary::-webkit-details-marker { display: none; }
+details.volet > summary::before { content: "#"; color: var(--accent); }
+details.volet > summary::after {
+  content: "▸"; color: var(--muted); margin-left: auto; font-size: .8rem;
+}
+details.volet[open] > summary::after { content: "▾"; }
+details.volet > summary:hover { color: var(--accent); }
+details.volet .volet-body { margin-top: 1rem; }
+
+/* ---- news --------------------------------------------------------------- */
+.news-item { padding: .2rem 0; }
+.news-date { color: var(--muted); font-size: .8rem; }
+.news-title { font-weight: 600; }
+
+/* ---- footer ------------------------------------------------------------- */
+footer {
+  margin-top: 3.5rem; padding-top: 1.2rem; border-top: 1px solid var(--line);
+  color: var(--muted); font-size: .85rem;
+}
+footer p { margin: 0 0 .5rem; }
+footer a { color: var(--fg); text-decoration: none; }
+footer a:hover { color: var(--accent); }
+.fund { display: flex; align-items: center; gap: .7rem; margin-top: .6rem; }
+.fund img {
+  width: 54px; height: 54px; object-fit: contain;
+  background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 4px;
+}
+
+/* ---- mobile ------------------------------------------------------------- */
+@media (max-width: 40rem) {
+  .partners { grid-template-columns: 1fr; }
+  h1 { font-size: 1.4rem; }
+}
